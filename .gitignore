@@ -1,0 +1,11 @@
+.venv
+/.quarto/
+
+/*.html
+!revealjs-tweak.html
+*_files/
+/.luarc.json
+
+
+
+**/*.quarto_ipynb
