@@ -1,0 +1,287 @@
+---
+pagetitle: From Notebook to Publish‑Ready Report with Quarto
+date: 09/30/2025
+format:
+  clean-revealjs:
+    width: 1280
+    height: 720
+    theme: [default, reveal-style.scss]
+    footer: Follow along at <https://cderv.github.io/pydata-paris-2025-quarto-publish/> and <https://quarto.org>
+    code-line-numbers: false
+    slide-number: true
+    mermaid-format: png
+    preview-links: auto
+    multiplex: false
+    include-after-body: 
+      - revealjs-tweak.html
+    logo: images/PyData_logo.png
+revealjs-plugins:
+  - attribution
+resources: 
+  - images\ipynb-format.png
+---
+
+##  {#title-slide .quarto-title-block .center}
+
+```{=html}
+<h1 class='title'>From Notebook to Publish‑Ready Report with Quarto</h1>
+```
+
+![](images/PyData_logo.png){.absolute bottom="0px" right="160px" width="30%"}
+
+::::: quarto-title-authors
+:::: quarto-title-author
+::: quarto-title-author-name
+Christophe Dervieux <p class="quarto-title-affiliation">Posit PBC</p>
+:::
+::::
+:::::
+
+{{< meta date >}}
+
+# Let's discuss publishing
+
+when you have notebook analysis and you are ready to share.
+
+## World Happiness Report Data
+
+<https://www.worldhappiness.report/ed/2025/>
+
+![](images/WHR-Fig2.1.png){height="80%"}
+
+## From Notebook...
+
+## From Notebook...
+
+Can this be shared easily only ? 
+
+## ... to Publish‑Ready Report
+
+Let's use Quarto for this
+
+```bash
+quarto publish quartopub whr-data-analysis.ipynb
+```
+
+## Demo
+
+![](demo-time.gif)
+
+::: notes
+https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3c2aDV0bG5ubXp3N2RvN25ieGczcXYzeXE3MzY2aW1kcG43NGcxOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTsYsMHpC2iO9eE/giphy.gif
+:::
+
+## Why does this matters ? 
+
+- Faster sharing
+- stakeholder-ready output
+- reproducibility 
+- production-quality
+
+::: {.notes}
+Instead of handing over a raw .ipynb, Quarto lets you ship production‑quality HTML and paginated PDFs — polished, brandable, and ready for stakeholders — all from the same source document.
+:::
+
+## What is Quarto ? 
+
+- Multi-engine (Jupyter, Knitr), multi-format (HTML, PDF, slides)
+- Config-driven via YAML and CLI (quarto render / quarto publish)
+- Designed for reproducible, professional output
+
+## How does it work ? 
+
+- ipynb -> quarto render -> html/pdf/typst
+
+Best results by re-executing the notebook using `--execute`
+
+## Where can we publish ? 
+
+````bash
+❯ quarto publish --help 
+
+Usage:   quarto publish [provider] [path]
+Version: 1.8.24
+
+Description:
+
+  Publish a document or project to a provider.
+
+  Available providers include:
+
+   - Quarto Pub (quarto-pub)
+   - GitHub Pages (gh-pages)
+   - Posit Connect (connect)
+   - Netlify (netlify)
+   - Confluence (confluence)
+   - Hugging Face Spaces (huggingface)
+
+  Accounts are configured interactively during publishing.
+  Manage/remove accounts with: quarto publish accounts  
+````
+
+## Why multi-format matters 
+
+
+## Configuring the rendering
+
+```{.yaml}
+---
+title: "World Happiness Report"
+subtitle: "Happiness Trends and Contributing Factors (2011-2024)"
+author: "C. Dervieux"
+date: "2025-09-30"
+format: 
+  html: default
+  typst: default
+---
+```
+
+## Publishing multiple formats
+
+````bash
+quarto publish quartopub whr-data-analysis.ipynb
+````
+
+## About PDF with Typst
+
+![](images/typst-logo.png)
+
+![](images/typst-workflow.png){fig-align="center" width="70%"}
+
+::: notes
+Typst is a new open-source markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use. Typst is built to simplify the process of creating beautiful, professional PDFs. It uses a markup-based system, which means you write plain text and code to define your document's structure and style, just like you would with Quarto or Markdown. 
+:::
+
+## Improving the rendering
+
+### No output
+
+```{.yaml}
+execute:
+  echo: false
+```
+
+### Adding table of content
+
+````{.yaml}
+toc: true
+````
+
+## Adding publications-ready features 
+
+### Caption and Numbering
+
+```{.yaml}
+#| label: fig-global-trends
+#| fig-cap: "Global average happiness over time (2011-2024)"
+```
+
+```{.yaml}
+#| label: tbl-top10
+#| tbl-cap: "Top 10 happiest countries in 2024"
+```
+
+### Cross-referencing
+
+```{.markdown}
+From @fig-global-trends, we observe the following trends in global happiness scores over the years:
+```
+This will resolve to correct figure with numbering and reference link.
+
+### Inline computations results
+
+Special Quarto syntax allowing to interleave computed value and text
+
+````{.markdown}
+Finland (`{python} f"{top_countries_2024['ladder_score'][0]:.2f}"`)
+````
+
+Requires an execution pass through `quarto render` with `--execute` flag
+
+## What about theming ?
+
+## One theme for publication ready output
+
+## `_brand.yml` for unified theming
+
+## Example for WHR report analyst
+
+```{.yaml}
+meta:
+  name: World Happiness Report
+  link:
+    home: https://www.worldhappiness.report/
+
+logo: 
+  medium: whr_logo.png
+
+color:
+  palette:
+    dark-purple: "#93358c"
+    light-purple: "#f8f6fb"
+    teal: "#04afaf"
+    dark-blue: "#086992"
+    hot-pink: "#eb068c"
+    light-blue: "#1aade4"
+
+  background: white
+  foreground: black
+  primary: dark-purple
+  secondary: hot-pink
+  tertiary: light-purple
+  dark: black
+
+typography:
+  fonts:
+    - family: Montserrat
+      source: google
+      weight: [400, 700]
+
+  base:
+    family: Montserrat
+    weight: 400
+
+  headings:
+    family: Montserrat
+    weight: 700
+    color: dark-purple
+
+  link:
+    color: primary
+    decoration: none
+```
+
+### {}
+
+````
+.
+├── WHR─report─analysis.ipynb
+├── _brand.yml
+└── whr_logo.png
+````
+
+### Logo support
+
+```{.yaml}
+format:
+  typst: 
+    logo:
+      width: 1in
+      padding-left: 0.5in
+      padding-top: 0.25in
+      alt: World Happiness Report Logo
+```
+
+### Demo
+
+![](demo-time.gif)
+
+::: notes
+https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3c2aDV0bG5ubXp3N2RvN25ieGczcXYzeXE3MzY2aW1kcG43NGcxOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTsYsMHpC2iO9eE/giphy.gif
+:::
+
+## Learning More
+
+A lot more can be done with **Quarto**:
+
+-   Deep dive at <https://quarto.org>
