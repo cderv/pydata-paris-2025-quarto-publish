@@ -1,0 +1,11 @@
+## Demo
+
+![](demo-time.gif)
+
+::: attribution
+https://giphy.com/gifs/southpark-south-park-season-20-3o7aTsYsMHpC2iO9eE
+:::
+
+::: notes
+https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3c2aDV0bG5ubXp3N2RvN25ieGczcXYzeXE3MzY2aW1kcG43NGcxOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTsYsMHpC2iO9eE/giphy.gif
+:::
