@@ -217,7 +217,7 @@ format:
 
 ![](images/metadata-cell-jupyterlab.png)
 
-![](images/jupyter-logo.png){.in-text} <https://quarto.org/docs/tools/jupyter-lab.html>
+![](images/jupyter-logo.png){.in-text} [JupyterLab Quarto Extension](https://quarto.org/docs/tools/jupyter-lab.html)
 
 
 ## Publishing multiple formats
@@ -226,55 +226,81 @@ format:
 quarto publish quartopub whr-data-analysis.ipynb
 ````
 
+## {background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-2/" background-interactive=true footer=false logo=false}
+
 ## About PDF with Typst
 
 ![](images/typst-logo.png)
 
 ![](images/typst-workflow.png){fig-align="center" width="70%"}
 
+- <https://typst.app>
+- <https://quarto.org/docs/output-formats/typst.html>
+
 ::: notes
 Typst is a new open-source markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use. Typst is built to simplify the process of creating beautiful, professional PDFs. It uses a markup-based system, which means you write plain text and code to define your document's structure and style, just like you would with Quarto or Markdown. 
 :::
 
-## Improving the rendering
+# Improving the rendered output
 
-### No output
+## No source code cell in output
+
+::: {.spacer style="height:50px"}
+:::
 
 ```{.yaml}
 execute:
   echo: false
 ```
 
-### Adding table of content
+## Adding table of content
+
+::: {.spacer style="height:50px"}
+:::
 
 ````{.yaml}
 toc: true
 ````
 
-## Adding publications-ready features 
+{{< include _demo-time.qmd >}}
 
-### Caption and Numbering
+# Adding publications-ready features 
+
+About in-cells configurations
+
+## Caption and Numbering
+
+- Figures
 
 ```{.yaml}
 #| label: fig-global-trends
 #| fig-cap: "Global average happiness over time (2011-2024)"
 ```
 
+::: {.spacer style="height:50px"}
+:::
+
+- Tables
+
 ```{.yaml}
 #| label: tbl-top10
 #| tbl-cap: "Top 10 happiest countries in 2024"
 ```
 
-### Cross-referencing
+## Cross-referencing
 
 ```{.markdown}
-From @fig-global-trends, we observe the following trends in global happiness scores over the years:
+From @fig-global-trends, we observe the following trends 
+in global happiness scores over the years
 ```
 This will resolve to correct figure with numbering and reference link.
 
-### Inline computations results
+## Inline computations results {.smaller}
 
 Special Quarto syntax allowing to interleave computed value and text
+
+::: {.spacer style="height:50px"}
+:::
 
 ````{.markdown}
 Finland (`{python} f"{top_countries_2024['ladder_score'][0]:.2f}"`)
@@ -282,11 +308,15 @@ Finland (`{python} f"{top_countries_2024['ladder_score'][0]:.2f}"`)
 
 Requires an execution pass through `quarto render` with `--execute` flag
 
-## What about theming ?
+{{< include _demo-time.qmd >}}
+
+# What about theming ?
 
 ## One theme for publication ready output
 
-## `_brand.yml` for unified theming
+`_brand.yml` for unified theming
+
+
 
 ## Example for WHR report analyst
 
