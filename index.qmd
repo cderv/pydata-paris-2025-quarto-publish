@@ -220,9 +220,13 @@ format:
 
 ## Publishing multiple formats
 
-````bash
+Same command
+
+::: {.make-bigger}
+````{.bash}
 quarto publish quartopub whr-data-analysis.ipynb
 ````
+:::
 
 ## {background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-2/" background-interactive=true footer=false logo=false}
 
@@ -260,34 +264,35 @@ execute:
 toc: true
 ````
 
+## Just configuration in Notebook header
+
+![](images/ipynb-yaml-block.png)
+
 ## {background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-3/" background-interactive=true footer=false logo=false}
 
 # Adding publications-ready features 
 
-About in-cells configurations
+About in-cell configurations
 
 ## Caption and Numbering
 
-- Figures
+### Figures
 
-```{.yaml}
-#| label: fig-global-trends
-#| fig-cap: "Global average happiness over time (2011-2024)"
-```
+![](images/in-cells-figures.png)
 
-::: {.spacer style="height:50px"}
-:::
+## Caption and Numbering
 
-- Tables
+### Tables
 
-```{.yaml}
-#| label: tbl-top10
-#| tbl-cap: "Top 10 happiest countries in 2024"
-```
+![](images/in-cells-tables.png)
 
 ## Cross-referencing
 
-```{.markdown}
+::: {.bottom-pad}
+Using `@<label>`
+:::
+
+```{.markdown filename="inside markdown cell"}
 From @fig-global-trends, we observe the following trends 
 in global happiness scores over the years
 ```
@@ -300,7 +305,7 @@ Special Quarto syntax allowing to interleave computed value and text
 ::: {.spacer style="height:50px"}
 :::
 
-````{.markdown}
+````{.markdown filename="inside markdown cell"}
 Finland (`{python} f"{top_countries_2024['ladder_score'][0]:.2f}"`)
 ````
 
@@ -367,7 +372,11 @@ typography:
     decoration: none
 ```
 
-## A file nexto to the notebook
+
+[brand.yml specifications](https://posit-dev.github.io/brand-yml/brand/)
+
+
+## A file next to the notebook
 
 ````{.default code-line-numbers="|2-3"}
 .
@@ -378,7 +387,12 @@ typography:
 └── whr_logo.png
 ````
 
+Automatically picked up by Quarto
+<https://quarto.org/docs/authoring/brand.html> 
+
 ## Logo support
+
+For formats supporting logo:
 
 ```{.yaml}
 format:

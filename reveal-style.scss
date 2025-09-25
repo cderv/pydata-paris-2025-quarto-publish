@@ -98,7 +98,7 @@ $presentation-font-size-root: 48px !default;
     }
 
     h3 {
-        margin-top: 1em;
+        margin-top: 0.5em;
     }
 
     table {
@@ -148,6 +148,10 @@ dl.code-annotation-container-grid {
 
 .make-smaller {
     font-size: 0.7em;
+}
+
+.make-bigger {
+    font-size: 1.3em;
 }
 
 .hidden-element {
