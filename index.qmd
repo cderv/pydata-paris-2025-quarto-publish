@@ -328,7 +328,7 @@ Requires an execution pass through `quarto render` with `--execute` flag
 
 ## Example for WHR report analyst
 
-```{.yaml}
+```{.yaml code-line-numbers="|1-4|6-7|9|10-16|17-22|24|25-28|29-38" filename="_brand.yml"}
 meta:
   name: World Happiness Report
   link:
@@ -345,7 +345,6 @@ color:
     dark-blue: "#086992"
     hot-pink: "#eb068c"
     light-blue: "#1aade4"
-
   background: white
   foreground: black
   primary: dark-purple
@@ -358,16 +357,13 @@ typography:
     - family: Montserrat
       source: google
       weight: [400, 700]
-
   base:
     family: Montserrat
     weight: 400
-
   headings:
     family: Montserrat
     weight: 700
     color: dark-purple
-
   link:
     color: primary
     decoration: none
@@ -393,6 +389,8 @@ format:
       padding-top: 0.25in
       alt: World Happiness Report Logo
 ```
+
+## {background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-5/" background-interactive=true footer=false logo=false}
 
 {{< include _demo-time.qmd >}}
 
