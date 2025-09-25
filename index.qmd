@@ -24,10 +24,10 @@ resources:
 ##  {#title-slide .quarto-title-block .center}
 
 ```{=html}
-<h1 class='title'>From Notebook to Publish‑Ready Report with Quarto</h1>
+<h1 class='title'>From Notebook </br>to Publish‑Ready Report </br> with Quarto</h1>
 ```
 
-![](images/PyData_logo.png){.absolute bottom="0px" right="160px" width="30%"}
+![](images/PyData_logo.png){.absolute bottom="150px" right="160px" width="40%"}
 
 ::::: quarto-title-authors
 :::: quarto-title-author
@@ -35,7 +35,7 @@ resources:
 Christophe Dervieux
 :::
 ::: quarto-title-author-affiliation
-![](images/Posit-Logos-2024.svg){height="40px"}
+![](images/Posit-Logos-2024.svg){height="50px"}
 :::
 ::::
 :::::
@@ -44,58 +44,89 @@ Christophe Dervieux
 
 # Let's discuss publishing
 
-when you have notebook analysis and you are ready to share.
+::: notes
+when you have a notebook analysis and you are ready to share.
+:::
 
-## World Happiness Report Data
+## World Happiness Report 2025
 
 <https://www.worldhappiness.report/ed/2025/>
 
-![](images/WHR-Fig2.1.png){height="80%"}
+![](images/WHR-cover.png)
 
-## From Notebook...
+## World Happiness Report Data
 
-## From Notebook...
+![](images/WHR-Fig2.1.png){.lightbox height="80%"}
 
-Can this be shared easily only ? 
+::: attribution
+<https://www.worldhappiness.report/ed/2025/>
+:::
 
-## ... to Publish‑Ready Report
+# From Notebook...
 
-Let's use Quarto for this
-
-```bash
-quarto publish quartopub whr-data-analysis.ipynb
-```
-
-## Demo
-
-![](demo-time.gif)
+## {background-image="images\whr-ipynb-report-1.gif" background-size="contain" background-repeat="no-repeat"}
 
 ::: notes
-https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3c2aDV0bG5ubXp3N2RvN25ieGczcXYzeXE3MzY2aW1kcG43NGcxOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTsYsMHpC2iO9eE/giphy.gif
+Can this be shared easily only ? 
 :::
+
+# ... to Publish‑Ready Report
+
+## Let's use Quarto for this
+
+![](images/quarto-logo-trademark.svg){.in-text} is an open-source, scientific, and technical publishing system
+
+::: {.spacer style="height:100px"}
+:::
+
+::: {.r-fit-text}
+```{.bash}
+quarto publish quartopub whr-data-analysis.ipynb
+```
+:::
+
+## {background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-1/index.html" background-interactive=true footer=false logo=false}
+
 
 ## Why does this matters ? 
 
+::: incremental
 - Faster sharing
 - stakeholder-ready output
 - reproducibility 
 - production-quality
+:::
 
 ::: {.notes}
 Instead of handing over a raw .ipynb, Quarto lets you ship production‑quality HTML and paginated PDFs — polished, brandable, and ready for stakeholders — all from the same source document.
 :::
 
-## What is Quarto ? 
+# About Quarto
 
-- Multi-engine (Jupyter, Knitr), multi-format (HTML, PDF, slides)
-- Config-driven via YAML and CLI (quarto render / quarto publish)
-- Designed for reproducible, professional output
+## What is Quarto exactly ? 
+
+A Command Line Interface to render and publish documents and projects
+
+::: incremental
+- Multi-engine  
+  Jupyter for Python, Knitr for R, QuartoNotebookRunner for Julia, Observable for JS
+
+- Multi-format  
+  HTML, PDF, HTML slides, PDF slides, pptx, docx, ...
+
+- Config-driven via YAML and CLI flags
+
+- Designed for reproducible input (.ipynb, .qmd) towards professional outputs.
+:::
+
 
 ## How does it work ? 
 
 - ipynb -> quarto render -> html/pdf/typst
 
 Best results by re-executing the notebook using `--execute`
+
+{{< include _demo-time.qmd >}}
 
 ## Where can we publish ? 
 
