@@ -139,8 +139,6 @@ quarto render whr-report-analysis.ipynb --execute
 ```
 :::
 
-{{< include _demo-time.qmd >}}
-
 ## Where can we publish ? 
 
 ````{.bash code-line-numbers="3|10-17"}
