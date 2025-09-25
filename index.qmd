@@ -371,10 +371,12 @@ typography:
 
 ## A file nexto to the notebook
 
-````
+````{.default code-line-numbers="|2-3"}
 .
-├── WHR─report─analysis.ipynb
 ├── _brand.yml
+├── WHR─report─analysis─5.ipynb
+├── data
+│   └── whr.csv
 └── whr_logo.png
 ````
 
@@ -392,10 +394,30 @@ format:
 
 ## {background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-5/" background-interactive=true footer=false logo=false}
 
+# Figures and Tables ? {visibility="hidden"}
+
 {{< include _demo-time.qmd >}}
 
-## Learning More
+## Using Quarto to publish Notebooks
 
+::: incremental
+- Fast sharing of an existing analysis, with multiple formats from same source
+
+- Nicely formated outputs through configurations and Quarto specific features
+
+- Organization Branded publications
+:::
+
+# {}
+
+::: {.v-center-container}
 A lot more can be done with **Quarto**:
+:::
 
--   Deep dive at <https://quarto.org>
+::: v-center-container
+Deep dive at <https://quarto.org>
+:::
+
+::: {.fragment .r-fit-text .hl}
+Thank You !
+:::
