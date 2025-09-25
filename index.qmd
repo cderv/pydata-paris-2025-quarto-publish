@@ -32,7 +32,10 @@ resources:
 ::::: quarto-title-authors
 :::: quarto-title-author
 ::: quarto-title-author-name
-Christophe Dervieux <p class="quarto-title-affiliation">Posit PBC</p>
+Christophe Dervieux
+:::
+::: quarto-title-author-affiliation
+![](images/Posit-Logos-2024.svg){height="40px"}
 :::
 ::::
 :::::
