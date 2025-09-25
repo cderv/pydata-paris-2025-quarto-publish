@@ -24,7 +24,7 @@ resources:
 ##  {#title-slide .quarto-title-block .center}
 
 ```{=html}
-<h1 class='title'>From Notebook </br>to Publish‑Ready Report </br> with Quarto</h1>
+<h1 class='title'>From Notebook to Publish‑Ready Report with Quarto</h1>
 ```
 
 ![](images/PyData_logo.png){.absolute bottom="150px" right="160px" width="40%"}
@@ -103,7 +103,7 @@ Instead of handing over a raw .ipynb, Quarto lets you ship production‑quality 
 
 # About Quarto
 
-## What is Quarto exactly ? 
+## What is Quarto exactly ? {.smaller}
 
 A Command Line Interface to render and publish documents and projects
 
@@ -119,18 +119,31 @@ A Command Line Interface to render and publish documents and projects
 - Designed for reproducible input (.ipynb, .qmd) towards professional outputs.
 :::
 
+## How does it work ?
 
-## How does it work ? 
+![](images/ipynb-how-it-works.png)
 
-- ipynb -> quarto render -> html/pdf/typst
+::: {.fragment}
+```{.bash}
+quarto render whr-report-analysis.ipynb
+```
+:::
 
+::: {.fragment}
 Best results by re-executing the notebook using `--execute`
+::: 
+
+::: {.fragment}
+```{.bash}
+quarto render whr-report-analysis.ipynb --execute
+```
+:::
 
 {{< include _demo-time.qmd >}}
 
 ## Where can we publish ? 
 
-````bash
+````{.bash code-line-numbers="3|10-17"}
 ❯ quarto publish --help 
 
 Usage:   quarto publish [provider] [path]
@@ -152,11 +165,27 @@ Description:
   Accounts are configured interactively during publishing.
   Manage/remove accounts with: quarto publish accounts  
 ````
+::: notes
+`quarto publish` calls `quarto render` unless `quarto publish --no-render`
+:::
 
-## Why multi-format matters 
+# Publishing system ? 
 
+- Configurable rendering
+- Multi formats outputs
+- Publications-ready features
+
+
+## Why multi-format matters ?
+
+- Different audiences
+- Different use cases
+- Different distribution channels
+- Different reading experiences
 
 ## Configuring the rendering
+
+Using YAML front matter
 
 ```{.yaml}
 ---
@@ -169,6 +198,27 @@ format:
   typst: default
 ---
 ```
+
+## Configuring the rendering
+
+![](images/metadata-cell.png)
+
+::: {.notes}
+`markdown` cell in Jupyter Notebook
+:::
+
+## Rendered nicely in ![](images/positron-logo.png){.in-text}
+
+![](images/metadata-cell-nice.png)
+
+![](images/positron-logo.png){.in-text} <https://positron.posit.co>
+
+## Rendered nicely in ![](images/jupyter-logo.png){.in-text}
+
+![](images/metadata-cell-jupyterlab.png)
+
+![](images/jupyter-logo.png){.in-text} <https://quarto.org/docs/tools/jupyter-lab.html>
+
 
 ## Publishing multiple formats
 
