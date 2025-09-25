@@ -394,9 +394,17 @@ format:
 
 ## {background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-5/" background-interactive=true footer=false logo=false}
 
-# Figures and Tables ? {visibility="hidden"}
+# Figures and Tables?
 
-{{< include _demo-time.qmd >}}
+## Tooling to use brand
+
+- `pip install quarto`
+
+- `pip install brand-yml`
+
+Use brand.yml values in your Python code to style tables and figures
+
+# Takeaways
 
 ## Using Quarto to publish Notebooks
 
@@ -405,13 +413,13 @@ format:
 
 - Nicely formated outputs through configurations and Quarto specific features
 
-- Organization Branded publications
+- Organization Branded publications at hand
 :::
 
 # {}
 
 ::: {.v-center-container}
-A lot more can be done with **Quarto**:
+A lot more can be done with [**Quarto**]{.hl}
 :::
 
 ::: v-center-container
