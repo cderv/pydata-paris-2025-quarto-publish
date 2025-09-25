@@ -98,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-017c8589092df89700c00b5adc667b4d.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-e7aa9b83076eba53402e35138a3a40c1.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -430,7 +430,10 @@ HTML, PDF, HTML slides, PDF slides, pptx, docx, …</p></li>
 </section>
 <section id="publishing-multiple-formats" class="slide level2">
 <h2>Publishing multiple formats</h2>
+<p>Same command</p>
+<div class="make-bigger">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish quartopub whr-data-analysis.ipynb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="section-2" class="slide level2" data-background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-2/" data-background-interactive="true" data-footer="false" data-logo="false">
 <h2></h2>
@@ -481,34 +484,40 @@ HTML, PDF, HTML slides, PDF slides, pptx, docx, …</p></li>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+<section id="just-configuration-in-notebook-header" class="slide level2">
+<h2>Just configuration in Notebook header</h2>
+
+<img data-src="images/ipynb-yaml-block.png" class="r-stretch"></section>
 <section id="section-3" class="slide level2" data-background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-3/" data-background-interactive="true" data-footer="false" data-logo="false">
 <h2></h2>
 </section></section>
 <section>
 <section id="adding-publications-ready-features" class="title-slide slide level1 center">
 <h1>Adding publications-ready features</h1>
-<p>About in-cells configurations</p>
+<p>About in-cell configurations</p>
 </section>
 <section id="caption-and-numbering" class="slide level2">
 <h2>Caption and Numbering</h2>
-<ul>
-<li>Figures</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-global-trends</span></span>
-<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Global average happiness over time (2011-2024)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="spacer" style="height:50px">
+<h3 id="figures">Figures</h3>
 
-</div>
-<ul>
-<li>Tables</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-top10</span></span>
-<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Top 10 happiest countries in 2024"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
+<img data-src="images/in-cells-figures.png" class="r-stretch"></section>
+<section id="caption-and-numbering-1" class="slide level2">
+<h2>Caption and Numbering</h2>
+<h3 id="tables">Tables</h3>
+
+<img data-src="images/in-cells-tables.png" class="r-stretch"></section>
 <section id="cross-referencing" class="slide level2">
 <h2>Cross-referencing</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a>From @fig-global-trends, we observe the following trends </span>
-<span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a>in global happiness scores over the years</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="bottom-pad">
+<p>Using <code>@&lt;label&gt;</code></p>
+</div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>inside markdown cell</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-filename="inside markdown cell"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a>From @fig-global-trends, we observe the following trends </span>
+<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a>in global happiness scores over the years</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>This will resolve to correct figure with numbering and reference link.</p>
 </section>
 <section id="inline-computations-results" class="slide level2 smaller">
@@ -517,7 +526,12 @@ HTML, PDF, HTML slides, PDF slides, pptx, docx, …</p></li>
 <div class="spacer" style="height:50px">
 
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a>Finland (<span class="in">`{python} f"{top_countries_2024['ladder_score'][0]:.2f}"`</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>inside markdown cell</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-filename="inside markdown cell"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a>Finland (<span class="in">`{python} f"{top_countries_2024['ladder_score'][0]:.2f}"`</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Requires an execution pass through <code>quarto render</code> with <code>--execute</code> flag</p>
 </section>
 <section id="section-4" class="slide level2" data-background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-4/" data-background-interactive="true" data-footer="false" data-logo="false">
@@ -543,64 +557,67 @@ HTML, PDF, HTML slides, PDF slides, pptx, docx, …</p></li>
 <div class="code-with-filename-file">
 <pre><strong>_brand.yml</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-filename="_brand.yml" data-code-line-numbers="|1-4|6-7|9|10-16|17-22|24|25-28|29-38"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href=""></a><span class="fu">meta</span><span class="kw">:</span></span>
-<span id="cb13-2"><a href=""></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> World Happiness Report</span></span>
-<span id="cb13-3"><a href=""></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span></span>
-<span id="cb13-4"><a href=""></a><span class="at">    </span><span class="fu">home</span><span class="kw">:</span><span class="at"> https://www.worldhappiness.report/</span></span>
-<span id="cb13-5"><a href=""></a></span>
-<span id="cb13-6"><a href=""></a><span class="fu">logo</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb13-7"><a href=""></a><span class="at">  </span><span class="fu">medium</span><span class="kw">:</span><span class="at"> whr_logo.png</span></span>
-<span id="cb13-8"><a href=""></a></span>
-<span id="cb13-9"><a href=""></a><span class="fu">color</span><span class="kw">:</span></span>
-<span id="cb13-10"><a href=""></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
-<span id="cb13-11"><a href=""></a><span class="at">    </span><span class="fu">dark-purple</span><span class="kw">:</span><span class="at"> </span><span class="st">"#93358c"</span></span>
-<span id="cb13-12"><a href=""></a><span class="at">    </span><span class="fu">light-purple</span><span class="kw">:</span><span class="at"> </span><span class="st">"#f8f6fb"</span></span>
-<span id="cb13-13"><a href=""></a><span class="at">    </span><span class="fu">teal</span><span class="kw">:</span><span class="at"> </span><span class="st">"#04afaf"</span></span>
-<span id="cb13-14"><a href=""></a><span class="at">    </span><span class="fu">dark-blue</span><span class="kw">:</span><span class="at"> </span><span class="st">"#086992"</span></span>
-<span id="cb13-15"><a href=""></a><span class="at">    </span><span class="fu">hot-pink</span><span class="kw">:</span><span class="at"> </span><span class="st">"#eb068c"</span></span>
-<span id="cb13-16"><a href=""></a><span class="at">    </span><span class="fu">light-blue</span><span class="kw">:</span><span class="at"> </span><span class="st">"#1aade4"</span></span>
-<span id="cb13-17"><a href=""></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> white</span></span>
-<span id="cb13-18"><a href=""></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> black</span></span>
-<span id="cb13-19"><a href=""></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> dark-purple</span></span>
-<span id="cb13-20"><a href=""></a><span class="at">  </span><span class="fu">secondary</span><span class="kw">:</span><span class="at"> hot-pink</span></span>
-<span id="cb13-21"><a href=""></a><span class="at">  </span><span class="fu">tertiary</span><span class="kw">:</span><span class="at"> light-purple</span></span>
-<span id="cb13-22"><a href=""></a><span class="at">  </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> black</span></span>
-<span id="cb13-23"><a href=""></a></span>
-<span id="cb13-24"><a href=""></a><span class="fu">typography</span><span class="kw">:</span></span>
-<span id="cb13-25"><a href=""></a><span class="at">  </span><span class="fu">fonts</span><span class="kw">:</span></span>
-<span id="cb13-26"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Montserrat</span></span>
-<span id="cb13-27"><a href=""></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
-<span id="cb13-28"><a href=""></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">700</span><span class="kw">]</span></span>
-<span id="cb13-29"><a href=""></a><span class="at">  </span><span class="fu">base</span><span class="kw">:</span></span>
-<span id="cb13-30"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Montserrat</span></span>
-<span id="cb13-31"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">400</span></span>
-<span id="cb13-32"><a href=""></a><span class="at">  </span><span class="fu">headings</span><span class="kw">:</span></span>
-<span id="cb13-33"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Montserrat</span></span>
-<span id="cb13-34"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">700</span></span>
-<span id="cb13-35"><a href=""></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> dark-purple</span></span>
-<span id="cb13-36"><a href=""></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span></span>
-<span id="cb13-37"><a href=""></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> primary</span></span>
-<span id="cb13-38"><a href=""></a><span class="at">    </span><span class="fu">decoration</span><span class="kw">:</span><span class="at"> none</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" data-filename="_brand.yml" data-code-line-numbers="|1-4|6-7|9|10-16|17-22|24|25-28|29-38"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href=""></a><span class="fu">meta</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href=""></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> World Happiness Report</span></span>
+<span id="cb11-3"><a href=""></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span></span>
+<span id="cb11-4"><a href=""></a><span class="at">    </span><span class="fu">home</span><span class="kw">:</span><span class="at"> https://www.worldhappiness.report/</span></span>
+<span id="cb11-5"><a href=""></a></span>
+<span id="cb11-6"><a href=""></a><span class="fu">logo</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb11-7"><a href=""></a><span class="at">  </span><span class="fu">medium</span><span class="kw">:</span><span class="at"> whr_logo.png</span></span>
+<span id="cb11-8"><a href=""></a></span>
+<span id="cb11-9"><a href=""></a><span class="fu">color</span><span class="kw">:</span></span>
+<span id="cb11-10"><a href=""></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
+<span id="cb11-11"><a href=""></a><span class="at">    </span><span class="fu">dark-purple</span><span class="kw">:</span><span class="at"> </span><span class="st">"#93358c"</span></span>
+<span id="cb11-12"><a href=""></a><span class="at">    </span><span class="fu">light-purple</span><span class="kw">:</span><span class="at"> </span><span class="st">"#f8f6fb"</span></span>
+<span id="cb11-13"><a href=""></a><span class="at">    </span><span class="fu">teal</span><span class="kw">:</span><span class="at"> </span><span class="st">"#04afaf"</span></span>
+<span id="cb11-14"><a href=""></a><span class="at">    </span><span class="fu">dark-blue</span><span class="kw">:</span><span class="at"> </span><span class="st">"#086992"</span></span>
+<span id="cb11-15"><a href=""></a><span class="at">    </span><span class="fu">hot-pink</span><span class="kw">:</span><span class="at"> </span><span class="st">"#eb068c"</span></span>
+<span id="cb11-16"><a href=""></a><span class="at">    </span><span class="fu">light-blue</span><span class="kw">:</span><span class="at"> </span><span class="st">"#1aade4"</span></span>
+<span id="cb11-17"><a href=""></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> white</span></span>
+<span id="cb11-18"><a href=""></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> black</span></span>
+<span id="cb11-19"><a href=""></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> dark-purple</span></span>
+<span id="cb11-20"><a href=""></a><span class="at">  </span><span class="fu">secondary</span><span class="kw">:</span><span class="at"> hot-pink</span></span>
+<span id="cb11-21"><a href=""></a><span class="at">  </span><span class="fu">tertiary</span><span class="kw">:</span><span class="at"> light-purple</span></span>
+<span id="cb11-22"><a href=""></a><span class="at">  </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> black</span></span>
+<span id="cb11-23"><a href=""></a></span>
+<span id="cb11-24"><a href=""></a><span class="fu">typography</span><span class="kw">:</span></span>
+<span id="cb11-25"><a href=""></a><span class="at">  </span><span class="fu">fonts</span><span class="kw">:</span></span>
+<span id="cb11-26"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Montserrat</span></span>
+<span id="cb11-27"><a href=""></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
+<span id="cb11-28"><a href=""></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">700</span><span class="kw">]</span></span>
+<span id="cb11-29"><a href=""></a><span class="at">  </span><span class="fu">base</span><span class="kw">:</span></span>
+<span id="cb11-30"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Montserrat</span></span>
+<span id="cb11-31"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">400</span></span>
+<span id="cb11-32"><a href=""></a><span class="at">  </span><span class="fu">headings</span><span class="kw">:</span></span>
+<span id="cb11-33"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Montserrat</span></span>
+<span id="cb11-34"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">700</span></span>
+<span id="cb11-35"><a href=""></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> dark-purple</span></span>
+<span id="cb11-36"><a href=""></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span></span>
+<span id="cb11-37"><a href=""></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> primary</span></span>
+<span id="cb11-38"><a href=""></a><span class="at">    </span><span class="fu">decoration</span><span class="kw">:</span><span class="at"> none</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p><a href="https://posit-dev.github.io/brand-yml/brand/">brand.yml specifications</a></p>
 </section>
-<section id="a-file-nexto-to-the-notebook" class="slide level2">
-<h2>A file nexto to the notebook</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-code-line-numbers="|2-3"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href=""></a>.</span>
-<span id="cb14-2"><a href=""></a>├── _brand.yml</span>
-<span id="cb14-3"><a href=""></a>├── WHR─report─analysis─5.ipynb</span>
-<span id="cb14-4"><a href=""></a>├── data</span>
-<span id="cb14-5"><a href=""></a>│   └── whr.csv</span>
-<span id="cb14-6"><a href=""></a>└── whr_logo.png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="a-file-next-to-the-notebook" class="slide level2">
+<h2>A file next to the notebook</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-code-line-numbers="|2-3"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href=""></a>.</span>
+<span id="cb12-2"><a href=""></a>├── _brand.yml</span>
+<span id="cb12-3"><a href=""></a>├── WHR─report─analysis─5.ipynb</span>
+<span id="cb12-4"><a href=""></a>├── data</span>
+<span id="cb12-5"><a href=""></a>│   └── whr.csv</span>
+<span id="cb12-6"><a href=""></a>└── whr_logo.png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Automatically picked up by Quarto <a href="https://quarto.org/docs/authoring/brand.html" class="uri">https://quarto.org/docs/authoring/brand.html</a></p>
 </section>
 <section id="logo-support" class="slide level2">
 <h2>Logo support</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb15-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb15-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span></span>
-<span id="cb15-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">width</span><span class="kw">:</span><span class="at"> 1in</span></span>
-<span id="cb15-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">padding-left</span><span class="kw">:</span><span class="at"> 0.5in</span></span>
-<span id="cb15-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">padding-top</span><span class="kw">:</span><span class="at"> 0.25in</span></span>
-<span id="cb15-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">alt</span><span class="kw">:</span><span class="at"> World Happiness Report Logo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For formats supporting logo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb13-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb13-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span></span>
+<span id="cb13-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">width</span><span class="kw">:</span><span class="at"> 1in</span></span>
+<span id="cb13-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">padding-left</span><span class="kw">:</span><span class="at"> 0.5in</span></span>
+<span id="cb13-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">padding-top</span><span class="kw">:</span><span class="at"> 0.25in</span></span>
+<span id="cb13-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">alt</span><span class="kw">:</span><span class="at"> World Happiness Report Logo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="section-5" class="slide level2" data-background-iframe="https://cderv-posit.quarto.pub/whr-report-analysis-5/" data-background-interactive="true" data-footer="false" data-logo="false">
 <h2></h2>
