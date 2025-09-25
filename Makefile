@@ -32,8 +32,8 @@ index-for-print.html: index.qmd
 preview:
 		$(PREVIEW_CMD)
 
-publish:
-		$(PUBLISH_CMD)
+publish: index.qmd
+		$(PUBLISH_CMD) $<
 
 # Define the clean target
 clean: clean-output clean-freeze clean-print
