@@ -146,10 +146,6 @@ dl.code-annotation-container-grid {
     padding-top: 1em;
 }
 
-#html-theme .callout-note {
-    background-color: $body-bg;
-}
-
 .make-smaller {
     font-size: 0.7em;
 }
@@ -193,6 +189,22 @@ section#diagrams {
   .columns .column ul {
     display: inherit;
   }
+}
+
+.v-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.center-xy {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // -ms-transform: translateY(-50%), translateX(-50%);
+  // transform: translateY(-50%), translateX(-50%);
 }
 
 
