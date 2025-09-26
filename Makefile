@@ -29,8 +29,8 @@ index.html: index.qmd
 index-for-print.html: index.qmd
 		$(RENDER_CMD) $< -M print:true --output $@
 
-preview:
-		$(PREVIEW_CMD)
+preview: index.qmd
+		$(PREVIEW_CMD) $<
 
 publish: index.qmd
 		$(PUBLISH_CMD) $<
