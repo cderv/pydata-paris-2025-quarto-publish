@@ -64,7 +64,7 @@ when you have a notebook analysis and you are ready to share.
 
 # From Notebook...
 
-## {background-image="images\whr-ipynb-report-1.gif" background-size="contain" background-repeat="no-repeat"}
+## {background-image="images/whr-ipynb-report-1.gif" background-size="contain" background-repeat="no-repeat"}
 
 ::: notes
 Can this be shared easily only ? 
