@@ -15,10 +15,12 @@ format:
     include-after-body: 
       - revealjs-tweak.html
     logo: images/PyData_logo.png
+    preload-iframes: true
+filters:
+  - editable
 revealjs-plugins:
+  - editable
   - attribution
-resources: 
-  - images\ipynb-format.png
 ---
 
 ##  {#title-slide .quarto-title-block .center}
@@ -64,7 +66,7 @@ when you have a notebook analysis and you are ready to share.
 
 # From Notebook...
 
-## {background-image="images/whr-ipynb-report-1.gif" background-size="contain" background-repeat="no-repeat"}
+## {background-image="images/whr-ipynb-report-1.gif" background-size="contain" background-repeat="no-repeat" footer=false}
 
 ::: notes
 Can this be shared easily only ? 
@@ -232,12 +234,20 @@ quarto publish quartopub whr-data-analysis.ipynb
 
 ## About PDF with Typst
 
-![](images/typst-logo.png)
+![](images/typst-logo.png){.absolute width=763.379px height=113.121px left=347.337px top=124.432px}
 
-![](images/typst-workflow.png){fig-align="center" width="70%"}
-
+::: {.columns}
+::: {.column width="80%"}
+![](images/typst-workflow.png){.absolute width=717.533px height=452.034px left=68px top=243px}
+:::
+::: {.column  .make-smaller width="20%"}
+::: {.absolute width=753.722px height=190px left=807px top=353px style="font-size: 33.6px; text-align: left;"}
 - <https://typst.app>
 - <https://quarto.org/docs/output-formats/typst.html>
+:::
+:::
+:::
+
 
 ::: notes
 Typst is a new open-source markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use. Typst is built to simplify the process of creating beautiful, professional PDFs. It uses a markup-based system, which means you write plain text and code to define your document's structure and style, just like you would with Quarto or Markdown. 
@@ -317,7 +327,7 @@ Requires an execution pass through `quarto render` with `--execute` flag
 
 ::: fragment
 
-![](images\brand-yml-wide-color.svg)
+![](images/brand-yml-wide-color.svg)
 
 ::: v-center-container
 <https://posit-dev.github.io/brand-yml>
@@ -372,8 +382,9 @@ typography:
     decoration: none
 ```
 
-
-[brand.yml specifications](https://posit-dev.github.io/brand-yml/brand/)
+::: footer
+brand.yml specifications: <https://posit-dev.github.io/brand-yml/brand/>
+:::
 
 
 ## A file next to the notebook
@@ -438,6 +449,6 @@ A lot more can be done with [**Quarto**]{.hl}
 Deep dive at <https://quarto.org>
 :::
 
-::: {.fragment .r-fit-text .hl}
-Thank You !
+::: {.absolute width=638.645px height=141.408px left=321px top=286px style="font-size: 68px; text-align: center;"}
+[Thank You !]{.hl}
 :::
