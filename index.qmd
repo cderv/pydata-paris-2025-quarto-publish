@@ -85,7 +85,7 @@ Can this be shared easily only ?
 
 ::: {.r-fit-text}
 ```{.bash}
-quarto publish quartopub whr-data-analysis.ipynb
+quarto publish quarto-pub whr-data-analysis.ipynb
 ```
 :::
 
@@ -228,7 +228,7 @@ Same command
 
 ::: {.make-bigger}
 ````{.bash}
-quarto publish quartopub whr-data-analysis.ipynb
+quarto publish quarto-pub whr-data-analysis.ipynb
 ````
 :::
 
