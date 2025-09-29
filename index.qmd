@@ -55,7 +55,7 @@ when you have a notebook analysis and you are ready to share.
 ![](images/WHR-cover.png)
 
 ::: footer
-[<https://www.worldhappiness.report/ed/2025/>]{.make-bigger}
+<https://www.worldhappiness.report/ed/2025/>
 :::
 
 ## World Happiness Report Data {footer=false}
@@ -173,8 +173,8 @@ Description:
 
 # Publishing system ? 
 
-- Configurable rendering
 - Multi formats outputs
+- Configurable rendering
 - Publications-ready features
 
 
@@ -201,7 +201,7 @@ format:
 ---
 ```
 
-## Configuring the rendering 
+## Configuring the rendering {footer=false}
 
 ![](images/metadata-cell.png)
 
@@ -211,13 +211,13 @@ format:
 
 ## Rendered nicely in ![](images/positron-logo.png){.in-text}
 
-![](images/metadata-cell-nice.png)
+![](images/metadata-cell-nice.png){.lightbox}
 
 ![](images/positron-logo.png){.in-text} <https://positron.posit.co>
 
 ## Rendered nicely in ![](images/jupyter-logo.png){.in-text}
 
-![](images/metadata-cell-jupyterlab.png)
+![](images/metadata-cell-jupyterlab.png){.lightbox}
 
 ![](images/jupyter-logo.png){.in-text} [JupyterLab Quarto Extension](https://quarto.org/docs/tools/jupyter-lab.html)
 
@@ -243,7 +243,7 @@ quarto publish quarto-pub whr-data-analysis.ipynb
 ![](images/typst-workflow.png){.absolute width=717.533px height=452.034px left=68px top=243px}
 :::
 ::: {.column  .make-smaller width="20%"}
-::: {.absolute width=753.722px height=190px left=807px top=353px style="font-size: 33.6px; text-align: left;"}
+::: {.absolute width=753.722px height=190px left=807px top=353px style="font-size: 23px; text-align: left;"}
 - <https://typst.app>
 - <https://quarto.org/docs/output-formats/typst.html>
 :::
@@ -342,6 +342,9 @@ Requires an execution pass through `quarto render` with `--execute` flag
 
 ![](images/brand-to-yml.excalidraw-boxed.min.svg)
 
+::: footer
+<https://posit-dev.github.io/brand-yml>
+:::
 
 ## Example for WHR report analyst
 
@@ -453,6 +456,8 @@ A lot more can be done with [**Quarto**]{.hl}
 Deep dive at <https://quarto.org>
 :::
 
+::: fragment
+
 ::: v-center-container
 {{< fa brands github >}} {{< fa brands bluesky >}} {{< fa brands mastodon >}} \@cderv  &#183; {{< fa brands linkedin >}} \@chrisderv
 :::
@@ -460,9 +465,14 @@ Deep dive at <https://quarto.org>
 ::: {.spacer style="height:50px"}
 :::
 
+:::
+
+::: fragment
+
 ::: {.absolute width=638.645px height=141.408px left=321px top=350px style="font-size: 68px; text-align: center;"}
 
 [Thank You !]{.hl}
+:::
 :::
 
 ::: footer
