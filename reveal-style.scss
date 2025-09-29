@@ -61,7 +61,7 @@ $presentation-font-size-root: 48px !default;
             }
         }
 
-        &.center img {
+        &.center img:not(.absolute, .no-center) {
           display: block;       /* allow margin auto to work */
           margin: 0 auto;       /* horizontally center */
         }

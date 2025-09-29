@@ -37,7 +37,7 @@ revealjs-plugins:
 Christophe Dervieux
 :::
 ::: quarto-title-author-affiliation
-![](images/Posit-Logos-2024.svg){height="50px"}
+![](images/Posit-Logos-2024.svg){.no-center height="50px"}
 :::
 ::::
 :::::
@@ -58,7 +58,7 @@ when you have a notebook analysis and you are ready to share.
 [<https://www.worldhappiness.report/ed/2025/>]{.make-bigger}
 :::
 
-## World Happiness Report Data
+## World Happiness Report Data {footer=false}
 
 ![](images/WHR-Fig2.1.png){.lightbox height="80%"}
 
