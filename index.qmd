@@ -52,9 +52,11 @@ when you have a notebook analysis and you are ready to share.
 
 ## World Happiness Report 2025
 
-<https://www.worldhappiness.report/ed/2025/>
-
 ![](images/WHR-cover.png)
+
+::: attribution
+[<https://www.worldhappiness.report/ed/2025/>]{.make-bigger}
+:::
 
 ## World Happiness Report Data
 
