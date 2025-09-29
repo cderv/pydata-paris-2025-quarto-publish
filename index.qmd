@@ -308,16 +308,18 @@ in global happiness scores over the years
 ```
 This will resolve to correct figure with numbering and reference link.
 
-## Inline computations results {.smaller}
+## Inline computations results
 
 Special Quarto syntax allowing to interleave computed value and text
 
 ::: {.spacer style="height:50px"}
 :::
 
+::: {.make-smaller}
 ````{.markdown filename="inside markdown cell"}
 Finland (`{python} f"{top_countries_2024['ladder_score'][0]:.2f}"`)
 ````
+:::
 
 Requires an execution pass through `quarto render` with `--execute` flag
 
@@ -449,6 +451,14 @@ A lot more can be done with [**Quarto**]{.hl}
 Deep dive at <https://quarto.org>
 :::
 
-::: {.absolute width=638.645px height=141.408px left=321px top=286px style="font-size: 68px; text-align: center;"}
+::: v-center-container
+{{< fa brands github >}} {{< fa brands bluesky >}} {{< fa brands mastodon >}} \@cderv  &#183; {{< fa brands linkedin >}} \@chrisderv
+:::
+
+::: {.spacer style="height:50px"}
+:::
+
+::: {.absolute width=638.645px height=141.408px left=321px top=350px style="font-size: 68px; text-align: center;"}
+
 [Thank You !]{.hl}
 :::
