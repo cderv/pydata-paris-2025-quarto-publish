@@ -50,7 +50,7 @@ Christophe Dervieux
 when you have a notebook analysis and you are ready to share.
 :::
 
-## World Happiness Report 2025
+## World Happiness Report 2025 {.center}
 
 ![](images/WHR-cover.png)
 

@@ -60,6 +60,11 @@ $presentation-font-size-root: 48px !default;
                 color: white;
             }
         }
+
+        &.center img {
+          display: block;       /* allow margin auto to work */
+          margin: 0 auto;       /* horizontally center */
+        }
     }
     
     .caption {
@@ -194,6 +199,8 @@ section#diagrams {
     display: inherit;
   }
 }
+
+
 
 .v-center-container {
   display: flex;
