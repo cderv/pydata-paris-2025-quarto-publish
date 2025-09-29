@@ -429,7 +429,7 @@ format:
 
 - `pip install brand-yml`
 
-Use brand.yml values in your Python code to style tables and figures
+Use `_brand.yml` values in your Python code to style tables and figures
 
 # Takeaways
 
