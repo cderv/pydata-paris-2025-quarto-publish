@@ -54,7 +54,7 @@ when you have a notebook analysis and you are ready to share.
 
 ![](images/WHR-cover.png)
 
-::: attribution
+::: footer
 [<https://www.worldhappiness.report/ed/2025/>]{.make-bigger}
 :::
 
@@ -201,7 +201,7 @@ format:
 ---
 ```
 
-## Configuring the rendering
+## Configuring the rendering 
 
 ![](images/metadata-cell.png)
 
