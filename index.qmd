@@ -464,3 +464,7 @@ Deep dive at <https://quarto.org>
 
 [Thank You !]{.hl}
 :::
+
+::: footer
+Published examples are at <https://github.com/cderv/demo-ipynb-whr-report>
+:::
